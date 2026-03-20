@@ -115,7 +115,7 @@ export default function HeroScrollVideo() {
   const cardScale   = useTransform(scrollYProgress, [0.55, 0.75], [1, 0.97]);
 
   return (
-    <div ref={containerRef} className="relative h-[300vh]">
+    <div ref={containerRef} className="relative h-[300vh]" style={{ background: DARK }}>
       <div
         className="sticky top-0 h-screen w-full overflow-hidden"
         style={{ background: DARK, willChange: 'transform' }}
@@ -150,7 +150,7 @@ export default function HeroScrollVideo() {
         />
 
         {/* ── Glass card — fades out on deeper scroll ── */}
-        <div className="absolute inset-0 z-10 flex items-center justify-center px-5 pointer-events-none">
+        <div className="absolute inset-0 z-10 flex items-start justify-center pt-[18vh] md:pt-0 md:items-center px-5 pointer-events-none">
           <motion.div
             initial={{ opacity: 0, scale: 0.96, y: 10 }}
             animate={{ opacity: 1, scale: 1,    y: 0  }}
@@ -160,10 +160,10 @@ export default function HeroScrollVideo() {
           >
             <div
               style={{
-                maxWidth: 480,
+                maxWidth: 420,
                 margin: '0 auto',
-                padding: 'clamp(1.5rem, 5vw, 2.25rem) clamp(1.25rem, 6vw, 2.75rem)',
-                borderRadius: 'clamp(18px, 4vw, 28px)',
+                padding: 'clamp(1.1rem, 4vw, 2.25rem) clamp(1rem, 5vw, 2.75rem)',
+                borderRadius: 'clamp(16px, 3.5vw, 28px)',
                 background: 'rgba(250,250,248,0.42)',
                 border: '1px solid rgba(255,255,255,0.62)',
                 boxShadow:
@@ -180,12 +180,12 @@ export default function HeroScrollVideo() {
                 initial={{ opacity: 0, y: 4 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4, ease: [0.19, 1, 0.22, 1] }}
-                className="inline-block mb-5"
+                className="inline-block mb-3 md:mb-5"
               >
                 <img
                   src="/tcc-logo-light.png"
                   alt="The Conscious Church"
-                  className="h-[18px] md:h-[22px] w-auto mx-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
+                  className="h-[15px] md:h-[22px] w-auto mx-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
                 />
               </motion.a>
 
@@ -194,7 +194,7 @@ export default function HeroScrollVideo() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, delay: 0.6, ease: [0.19, 1, 0.22, 1] }}
                 className="font-display font-extrabold text-text-primary leading-[0.92] tracking-[-0.025em]"
-                style={{ fontSize: 'clamp(2.2rem, 8vw, 4.5rem)' }}
+                style={{ fontSize: 'clamp(1.85rem, 7vw, 4.5rem)' }}
               >
                 AI <span style={{ color: '#16A34A' }}>Green</span><br />Scorecard
               </motion.h1>
@@ -203,7 +203,7 @@ export default function HeroScrollVideo() {
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8, ease: [0.19, 1, 0.22, 1] }}
-                className="mt-4 text-[13.5px] md:text-[15px] text-text-primary/70 max-w-[340px] mx-auto leading-relaxed"
+                className="mt-3 md:mt-4 text-[12.5px] md:text-[15px] text-text-primary/70 max-w-[300px] md:max-w-[340px] mx-auto leading-relaxed"
               >
                 Rating the world&apos;s largest AI companies on carbon emissions,
                 water usage, and transparency.
@@ -218,7 +218,7 @@ export default function HeroScrollVideo() {
                 initial={{ opacity: 0, y: 6 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 1.0, ease: [0.19, 1, 0.22, 1] }}
-                className="mt-6 inline-flex items-center gap-2 px-7 py-3 rounded-full bg-text-primary text-white text-[13px] font-semibold hover:bg-text-primary/85 transition-colors"
+                className="mt-4 md:mt-6 inline-flex items-center gap-2 px-6 py-2.5 md:px-7 md:py-3 rounded-full bg-text-primary text-white text-[12px] md:text-[13px] font-semibold hover:bg-text-primary/85 transition-colors"
               >
                 Explore the data
                 <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
